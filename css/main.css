@@ -1,0 +1,577 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+  user-select: none;
+  -ms-user-select: none;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #000;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#hidder {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+#hidder.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.content-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.nav-bar {
+  position: absolute;
+  width: 2vw;
+  top: 112vh;
+  left: 15vw;
+  & li a img {
+    width: 100%;
+  }
+  z-index: 999;
+}
+.nav-bar::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 12vh;
+  left: 50%;
+  bottom: 100%;
+  border-left: 1px solid #ccc;
+}
+
+.content-box-1 {
+  background-image: url(/image/首页图片/main.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60%;
+
+  & .background {
+    width: 120%;
+    margin-right: 2.5%;
+  }
+  .index-logo {
+    position: absolute;
+    top: 3vh;
+    left: 2vw;
+    width: 8vw;
+    object-fit: cover;
+  }
+  .official {
+    position: absolute;
+    width: 10vw;
+    top: 3vh;
+    right: 3vw;
+    cursor: pointer;
+  }
+  .recommended-age {
+    position: absolute;
+    bottom: 4vh;
+    left: 3vw;
+    width: 4.4vw;
+  }
+  .player {
+    position: absolute;
+    width: 4vw;
+    left: 45vw;
+    top: 40vh;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .player:hover {
+    transform: scale(1.2);
+  }
+  .player:active {
+    transform: scale(0.9);
+    transition: 0.1s;
+  }
+  .download-btn-box {
+    position: absolute;
+    width: 2.5vw;
+    height: fit-content;
+    top: 2vh;
+    left: 56.5%;
+    & img {
+      width: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  }
+  .tag-srcoll {
+    position: absolute;
+    width: 2vw;
+    bottom: -5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: stretch 4s infinite linear;
+  }
+}
+@keyframes stretch {
+  0% {
+    bottom: -5vh;
+  }
+  50% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -5vh;
+  }
+}
+
+.player-frame {
+  position: fixed;
+  width: 50vw;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.content-box-2 {
+  background-image: url(/image/三界路飨祭/content-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.content-box-3 {
+  background-image: url(/image/角色情报/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 128%;
+  background-position: 50%;
+  display: flex;
+  align-items: center;
+  & img.character-content {
+    position: absolute;
+    width: 60vw;
+    object-fit: contain;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+  }
+
+  /* 这个素材肯定是截屏+抠图弄来的，位置一直有误差 */
+  /* 修正心海和将军的图片位置 */
+  .character-content2 {
+    margin-top: 0.2%;
+    opacity: 0;
+  }
+  .character-content3 {
+    margin-left: -0.5%;
+    margin-top: -0.5%;
+    opacity: 0;
+  }
+
+  .tag-role-info {
+    position: absolute;
+    width: 2vw;
+    top: 0;
+    right: 19.5vw;
+  }
+  .tag-role-info::after {
+    content: "";
+    position: absolute;
+    height: 12vh;
+    width: 0;
+    left: 0;
+    bottom: 100%;
+    border-left: 1px solid #ccc;
+  }
+  .cv-btn-box {
+    position: absolute;
+    width: 2.2vw;
+    left: 28vw;
+    & img {
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 1vh;
+    }
+  }
+  .character-vedio {
+    position: absolute;
+    width: 13.5vw;
+    height: 16.5vh;
+    right: 25.7vw;
+    top: 44vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img.covers {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transition: 0.5s;
+    }
+    .covers1 {
+      opacity: 1;
+    }
+    .covers2 {
+      opacity: 0;
+    }
+    .covers3 {
+      opacity: 0;
+    }
+    & img.player-icon {
+      cursor: pointer;
+      width: 25%;
+      transition: 0.3s;
+      z-index: 2;
+    }
+    & img.player-icon:hover {
+      transform: scale(1.2);
+    }
+    & img.player-icon:active {
+      transform: scale(0.9);
+      transition: 0.1s;
+    }
+  }
+  .character-list {
+    position: absolute;
+    width: 13.5vw;
+    height: 10vh;
+    top: 62vh;
+    right: 25.7vw;
+    display: flex;
+    justify-content: space-around;
+    & img {
+      width: 30%;
+      object-fit: contain;
+      cursor: pointer;
+    }
+    & img:hover:not(.active) {
+      filter: brightness(1.5);
+      transition: 0.3s;
+    }
+  }
+}
+
+.content-box-4 {
+  background-image: url(/image/全新怪物/bg.jpg);
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  & .new-monster {
+    position: absolute;
+    width: 1.8vw;
+    right: 19%;
+    top: 0;
+  }
+  .monsters-list {
+    position: absolute;
+    width: 47vw;
+    height: 13vh;
+    left: 50%;
+    top: 47.5%;
+    transform: translate(-50%, -50%);
+    & img {
+      height: 100%;
+      object-fit: contain;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    & img:hover:not(.active) {
+      transform: scale(1.2);
+    }
+    & img:first-child {
+      float: left;
+    }
+    & img:last-child {
+      float: right;
+    }
+  }
+  .video-box {
+    position: absolute;
+    width: 29.2vw;
+    height: 29.2vw;
+    border-radius: 999px;
+    overflow: hidden;
+    top: 47.5%;
+    left: 50.1%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & video {
+      width: 52vw;
+    }
+  }
+  .monsers-info-box {
+    position: absolute;
+    width: 100vw;
+    height: 10vh;
+    bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img {
+      height: 70%;
+      object-fit: contain;
+    }
+  }
+}
+
+.content-box-5 {
+  background-image: url(/image/更多活动/bg.jpg);
+  background-size: 129%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  font-size: 0;
+  & .wrapper {
+    position: absolute;
+    width: 55vw;
+    height: 55vh;
+    left: 52%;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    transform: translate(-50%, -50%);
+
+    --item-width: 7vw;
+    --item-content-width: 33vw;
+    --margin-right: 0.5vw;
+
+    & .activity-box {
+      float: left;
+      width: calc(var(--item-width) + var(--item-content-width));
+      height: 120%;
+      margin-right: var(--margin-right);
+      overflow: hidden;
+      transition: 1s;
+      & .box {
+        width: calc(var(--item-content-width) + var(--item-width));
+        height: 100%;
+        & .activity {
+          width: var(--item-width);
+          height: 100%;
+          cursor: pointer;
+        }
+        .activity-content {
+          width: var(--item-content-width);
+          height: 82%;
+          vertical-align: top;
+          margin-top: 5vh;
+        }
+      }
+    }
+    & .box2,
+    .box3 {
+      width: var(--item-width);
+    }
+  }
+
+  .more-activity {
+    position: absolute;
+    width: 1.8vw;
+    right: 12%;
+    top: 0;
+  }
+}
+
+.content-box-6 {
+  background-image: url(/image/游戏特色/bg.jpg);
+  background-size: 128%;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+
+  & .attention-us {
+    width: 40vw;
+    height: 13vh;
+    position: absolute;
+    transform: translateX(-50%);
+    bottom: 5vh;
+    left: 50%;
+    display: flex;
+    justify-content: space-around;
+    & li {
+      float: left;
+      height: 100%;
+      & img {
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .marquee-img-wrapper {
+    position: absolute;
+    width: 58vw;
+    height: 50vh;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    & ul {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      position: relative;
+      justify-content: center;
+      & li.marquee-img {
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+        transition: 0.5s;
+        & img {
+          height: 100%;
+          transition: 0.5s;
+          /* transform: scale(1.1); */
+        }
+      }
+      & li.marquee-img:not(.active) {
+        z-index: 1;
+      }
+      & li.marquee-img:not(.active) img {
+        transform: scale(0.8);
+      }
+      & ul.nav-tag-box {
+        width: fit-content;
+        height: 5vh;
+        position: absolute;
+        bottom: -15%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        & li {
+          height: 30%;
+          float: left;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 0.3vw;
+          & img {
+            height: 100%;
+            cursor: pointer;
+          }
+        }
+      }
+      .scroll {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 11;
+        cursor: pointer;
+        width: 2vw;
+        transition: 0.3s;
+      }
+      .scroll.active {
+        filter: brightness(1.5);
+      }
+      .turn-left {
+        left: 3%;
+      }
+      .turn-right {
+        right: 3%;
+      }
+    }
+  }
+  .game-feature {
+    position: absolute;
+    width: 1.8vw;
+    right: 18%;
+    top: 0;
+  }
+}
+
+.footer .wrapper {
+  width: 100%;
+  height: 38vh;
+  background-color: #000;
+  position: relative;
+  & .brand-box {
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img {
+      width: 8vw;
+      margin-left: 7vw;
+      margin-top: 5vh;
+    }
+  }
+  .brand-box::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4vh;
+    border-left: 1px solid #cdcdcd;
+    top: 52%;
+    right: 40%;
+  }
+  .footer-info {
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    & ul {
+      margin-top: 2vh;
+      margin-left: 1vw;
+      width: 100%;
+      & li {
+        float: left;
+        margin-left: 2vh;
+        border-right: 1px solid #ccc;
+        padding-right: 0.8vw;
+        & a {
+          display: block;
+          font-size: 0.8vw;
+          color: #fff;
+          transition: 0.3s;
+        }
+        & a:hover {
+          transform: scale(1.2);
+        }
+      }
+      & li:last-child {
+        border-right: 0;
+      }
+    }
+    & p {
+      color: gray;
+      font-size: 0.8vw;
+      margin-left: 1vw;
+      margin-top: 0.5vh;
+    }
+    & span {
+      display: inline-block;
+      padding: 3vh 3vw;
+      border: 1px solid gray;
+      margin-left: 1vw;
+      margin-top: 2vh;
+    }
+  }
+}
