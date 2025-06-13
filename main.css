@@ -68,7 +68,7 @@ body {
 }
 
 .content-box-1 {
-  background-image: url(../image/首页图片/main.jpg);
+  background-image: url(image/首页图片/main.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 60%;
@@ -155,14 +155,14 @@ body {
 }
 
 .content-box-2 {
-  background-image: url(../image/三界路飨祭/content-2.jpg);
+  background-image: url(image/三界路飨祭/content-2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
 }
 
 .content-box-3 {
-  background-image: url(../image/角色情报/bg.jpg);
+  background-image: url(image/角色情报/bg.jpg);
   background-repeat: no-repeat;
   background-size: 128%;
   background-position: 50%;
@@ -277,7 +277,7 @@ body {
 }
 
 .content-box-4 {
-  background-image: url(../image/全新怪物/bg.jpg);
+  background-image: url(image/全新怪物/bg.jpg);
   background-size: cover;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -342,7 +342,7 @@ body {
 }
 
 .content-box-5 {
-  background-image: url(../image/更多活动/bg.jpg);
+  background-image: url(image/更多活动/bg.jpg);
   background-size: 129%;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -399,7 +399,7 @@ body {
 }
 
 .content-box-6 {
-  background-image: url(../image/游戏特色/bg.jpg);
+  background-image: url(image/游戏特色/bg.jpg);
   background-size: 128%;
   background-position: 50% 100%;
   background-repeat: no-repeat;
